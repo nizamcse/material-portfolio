@@ -2,11 +2,16 @@ var gulp= require('gulp');
     sass= require('gulp-sass');
     pug= require('gulp-pug');
 
+var sassOption = {
+    errLogToConsole: true,
+    outputStyle: 'expanded'
+};
+
 
 
 gulp.task('sass',function () {
-    gulp.src('sass/main.scss')
-        .pipe(sass())
+    gulp.src('src/scss/main.scss')
+        .pipe(sass(sassOption))
         .pipe(gulp.dest('bin/css/'));
 });
 gulp.task('pug',function () {
@@ -42,6 +47,8 @@ gulp.task('movelib',function () {
         .pipe(gulp.dest('bin/final-product/lib/isotope/css'));
     gulp.src('node_modules/jquery/dist/*.min.js')
         .pipe(gulp.dest('bin/final-product/lib/jquery/'));
+    gulp.src('node_modules/tether/dist/js/*.min.js')
+        .pipe(gulp.dest('bin/final-product/lib/tether/'));
 
 });
 gulp.task('watchsass',function () {
@@ -60,3 +67,6 @@ gulp.task('watchimg',function () {
 });
 
 gulp.task('default'),['sass','pug','watchsass','watchpug','js','watchjs','image','watchimg'];
+
+gulp.task('default',['sass','pug','watchsass','watchpug','js','watchjs']);
+

@@ -1,0 +1,27 @@
+mixin nav_push_menu_top(navclass,logo,navIcon_container,navIcon)
+    nav.top-nav(class=navclass)
+        .logo-container
+            a(href="index.html")
+                img(src=logo)
+        .push-menu-icon
+            a(href="#",class=navIcon_container)
+                i(class=navIcon)
+mixin nav_push(logo,navitem,asideClass,ulClass)
+    aside.push-navbar(class=asideClass)
+        if logo
+            .logo-container
+                img(src=logo)
+
+        ul.push-nav(class=ulClass)
+            li
+                if navitem.icon
+                    i(class=navitem.icon)
+                a(href=navitem.link) #{navitem.name}
+
+
+mixin navSlideDropdown(navMenues)
+    each navMenu in navMenues
+        ul(class=navMenu.class,data-menu=navMenu.dataMenu)
+            each list in navMenu.items
+                li(class=list.liclass)
+                    a(href="#",class=list.aclass,data-submenu=list.dataSubmenu)=list.text
