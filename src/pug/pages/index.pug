@@ -1,0 +1,122 @@
+extend ../layouts/layout.pug
+include ../../module/navbar.pug
+block main
+    +nav_push_menu_top("theme-nav","../image/logo.png","","ion-navicon")
+    nav.menu
+        .menu-wrap
+            +navSlideDropdown(
+        [
+            {
+                'class':'menu__level menu__level--current',
+                'dataMenu':'main-menu',
+                'items':[
+                    {
+                        'liclass':'menu-item',
+                        'text' :'Home',
+                        'dataSubmenu':'submenu-1',
+                        'aclass':'menu-link'
+                    },
+                    {
+                        'liclass':'menu-item',
+                        'text' :'About',
+                        'dataSubmenu':'submenu-2',
+                        'aclass':'menu-link'
+                    },
+                    {
+                        'liclass':'menu-item',
+                        'text' :'Portfolio',
+                        'dataSubmenu':'',
+                        'aclass':'menu-link'
+                    },
+                    {
+                        'liclass':'menu-item',
+                        'text' :'Contact',
+                        'dataSubmenu':'',
+                        'aclass':'menu-link'
+                    }
+                ]
+            },
+            {
+                'class':'menu__level',
+                'dataMenu':'submenu-1',
+                'items':[
+                    {
+                        'liclass':'menu-item',
+                        'text' :'Home 1',
+                        'dataSubmenu':'',
+                        'aclass':'menu-link'
+                    },
+                    {
+                        'liclass':'menu-item',
+                        'text' :'Home 2',
+                        'dataSubmenu':'',
+                        'aclass':'menu-link'
+                    },
+                    {
+                        'liclass':'menu-item',
+                        'text' :'Home 3',
+                        'dataSubmenu':'',
+                        'aclass':'menu-link'
+                    },
+                    {
+                        'liclass':'menu-item',
+                        'text' :'Home 4',
+                        'dataSubmenu':'',
+                        'aclass':'menu-link'
+                    }
+                ]
+            },
+            {
+                'class':'menu__level',
+                'dataMenu':'submenu-2',
+                'items':[
+                    {
+                        'liclass':'menu-item',
+                        'text' :'Home',
+                        'dataSubmenu':'',
+                        'aclass':'menu-link'
+                    },
+                    {
+                        'liclass':'menu-item',
+                        'text' :'About',
+                        'dataSubmenu':'',
+                        'aclass':'menu-link'
+                    },
+                    {
+                        'liclass':'menu-item',
+                        'text' :'Portfolio',
+                        'dataSubmenu':'',
+                        'aclass':'menu-link'
+                    },
+                    {
+                        'liclass':'menu-item',
+                        'text' :'Contact',
+                        'dataSubmenu':'',
+                        'aclass':'menu-link'
+                    }
+                ]
+            }
+        ]
+    )
+
+    .slide-container
+        .slide-item.red
+            .slide-content
+                h3 this is heading red
+        .slide-item.green.current
+             .slide-content
+                h3 this is heading green
+        .slide-item.black
+             .slide-content
+                h3 this is heading black
+        .slide-item.blue
+             .slide-content
+                h3 this is heading blue
+        .slide-item.pink
+             .slide-content
+                h3 this is heading pink
+
+    .slide-control
+        a(href="#",class="btn btn-default btn-prev") Previous
+        a(href="#",class="btn btn-default btn-next") Next
+

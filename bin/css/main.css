@@ -1,0 +1,197 @@
+/***************************************************************
+/*********************** NAVBAR ONE **************************/
+.top-nav {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #f7f7f7;
+}
+
+.top-nav .logo-container {
+  float: left;
+  display: inline-block;
+}
+
+.top-nav .logo-container a {
+  display: block;
+  padding: 5px;
+  line-height: 40px;
+  font-size: 24px;
+}
+
+.top-nav .logo-container a img {
+  max-height: 100%;
+  width: auto;
+}
+
+.top-nav .logo-container a:hover {
+  text-decoration: none;
+}
+
+.top-nav .push-menu-icon {
+  display: inline-block;
+  float: right;
+}
+
+.top-nav .push-menu-icon a {
+  display: block;
+  padding: 6px 15px;
+  line-height: 38px;
+  font-size: 24px;
+  color: #999;
+}
+
+.top-nav .push-menu-icon a:hover {
+  text-decoration: none;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100vh;
+  background: #1c1d22;
+}
+
+.menu-wrap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.menu__level {
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  overflow: hidden;
+  overflow-y: scroll;
+  width: calc(100% + 50px);
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.menu__level--current {
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.menu-item {
+  display: block;
+  width: calc(100% - 50px);
+  transform: translateX(-100%);
+}
+
+.menu__level--current .menu-item {
+  transform: translateX(0);
+}
+
+.menu-link {
+  font-weight: 600;
+  position: relative;
+  display: block;
+  padding: 1em 2.5em 1em 1.5em;
+  color: #bdbdbd;
+  -webkit-transition: color 0.1s;
+  transition: color 0.1s;
+}
+
+.menu-link[data-submenu]::after {
+  content: '...';
+  position: absolute;
+  right: 0;
+  padding: 0.25em 1.25em;
+  color: #fff;
+}
+
+.menu__link:hover,
+.menu__link[data-submenu]:hover::after {
+  color: #5c5edc;
+}
+
+.test-1 {
+  text-align: center;
+  -webkit-animation: inFromRight 20s both cubic-bezier(0.7, 0, 0.3, 1);
+  animation: inFromRight 20s both cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+@keyframes inFromRight {
+  0% {
+    font-size: 10px;
+  }
+  50% {
+    font-size: 30px;
+    color: red;
+    background-color: #1c1d22;
+    border: 1px solid #000;
+  }
+  50% {
+    font-size: 10px;
+  }
+  100% {
+    font-size: 50px;
+  }
+}
+
+.right-out li {
+  transform: translateX(100%);
+}
+
+.right-in li {
+  transform: translateX(0);
+}
+
+.slide-container {
+  width: 600px;
+  height: 400px;
+  background-color: yellow;
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.black {
+  background-color: black;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.pink {
+  background-color: pink;
+}
+
+.slide-item {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.current {
+  z-index: 10;
+}
+
+.slide-control {
+  margin: 0 auto;
+  width: 600px;
+  background-color: #f7f7f7;
+  padding: 15px 25px;
+  text-align: center;
+}
